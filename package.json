@@ -6,7 +6,26 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prestart": "npm run svg",
+    "prebuild": "npm run svg",
+    "svg": "svg-generator"
+  },
+  "svgGenerator": {
+    "outputPath": "./src/app/svg",
+    "srcPath": "./src/assets/svg",
+    "svgoConfig": {
+      "plugins": [
+        "removeDimensions",
+        "cleanupAttrs",
+        {
+          "name": "convertColors",
+          "params": {
+            "currentColor": true
+          }
+        }
+      ]
+    }
   },
   "private": true,
   "dependencies": {
