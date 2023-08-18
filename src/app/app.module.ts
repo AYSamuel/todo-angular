@@ -12,10 +12,11 @@ import { provideSvgIconsConfig } from '@ngneat/svg-icon';
 
 import { deleteIcon } from '@app/svg/delete';
 import { doneIcon } from '@app/svg/done';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, CreateComponent],
-  imports: [BrowserModule, AppRoutingModule, SvgIconComponent],
+  imports: [BrowserModule, AppRoutingModule, SvgIconComponent, FormsModule],
   providers: [
     provideSvgIcons([deleteIcon, doneIcon]),
     provideSvgIconsConfig({
