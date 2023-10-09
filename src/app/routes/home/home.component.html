@@ -1,0 +1,39 @@
+<div class="flex items-center justify-center h-screen">
+  <div class="flex flex-col items-center text-center">
+    <p class="text-6xl mb-6 text-gray-500">No task created yet.</p>
+    <p>Want to create one?</p>
+    <a
+      (click)="goToCreateComponent()"
+      class="bg-orange-400 active:bg-orange-400/80 py-1 w-[33.3%] text-center"
+    >
+      Create
+    </a>
+  </div>
+</div>
+<div class="my-10 mx-5 flex flex-col md:flex-row md:flex-wrap gap-2 md:gap-2">
+  <div
+    *ngFor="let task of tasksService.tasks; let i = index"
+    class="relative group p-2 border rounded-md drop-shadow-sm md:flex-row md:basis-1/4 lg:basis-1/5"
+  >
+    <h3 class="underline">
+      {{ task.taskTitle }} |
+      <span class="font-light text-sm"
+        >{{ task.dueDate }} at {{ task.dueTime }}</span
+      >
+    </h3>
+    <p class="text-sm">
+      {{ task.description }}
+    </p>
+    <div
+      class="hidden absolute group-hover:flex inset-0 bg-slate-300/95 opacity-30"
+    ></div>
+    <div class="hidden absolute group-hover:flex inset-0 justify-center gap-1">
+      <button (click)="complete(i)" class="text-green-500">
+        <svg-icon key="done" size="xl"></svg-icon>
+      </button>
+      <button (click)="delete(i)" class="text-red-500">
+        <svg-icon key="delete" size="xl"></svg-icon>
+      </button>
+    </div>
+  </div>
+</div>
