@@ -14,11 +14,22 @@ import { deleteIcon } from '@app/svg/delete';
 import { doneIcon } from '@app/svg/done';
 import { FormsModule } from '@angular/forms';
 
+import { TasksService } from './tasks.service';
+import { HomeComponent } from './routes/home/home.component';
+import { CompletedComponent } from './routes/completed/completed.component';
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CreateComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    CreateComponent,
+    HomeComponent,
+    CompletedComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, SvgIconComponent, FormsModule],
   providers: [
     provideSvgIcons([deleteIcon, doneIcon]),
+    TasksService,
     provideSvgIconsConfig({
       sizes: {
         xs: '10px',
