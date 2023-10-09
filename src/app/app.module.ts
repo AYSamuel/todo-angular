@@ -17,6 +17,8 @@ import { FormsModule } from '@angular/forms';
 import { TasksService } from './tasks.service';
 import { HomeComponent } from './routes/home/home.component';
 import { CompletedComponent } from './routes/completed/completed.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CompletedComponent } from './routes/completed/completed.component';
     CreateComponent,
     HomeComponent,
     CompletedComponent,
+    TasksComponent,
+    BodyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SvgIconComponent, FormsModule],
   providers: [
